@@ -1,9 +1,9 @@
 class DefaultRegex {
     companion object {
-        val email = Regex("(?<=.{3}).*(?=.{2}@)|(?<=.).(?=.@)|.(?=.@)")
+        val email = Regex("(?<=.{3}).*(?=.{1,2}@)|(?<=.).(?=.@)|.(?=@)")
 
-        val username = Regex("")
+        val username = Regex("(.)\$|(?<=.).*(?=.)")
 
-        val password = Regex("")
+        val password = Regex("^.+\$")
     }
 }
