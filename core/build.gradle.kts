@@ -1,5 +1,6 @@
 val kotlinStdlib: String by project
 val junitJupiterParams: String by project
+val jakartaPersistenceApi: String by project
 
 plugins {
     kotlin("jvm") version "1.8.0"
@@ -15,6 +16,7 @@ repositories {
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinStdlib")
+    implementation("jakarta.persistence:jakarta.persistence-api:$jakartaPersistenceApi")
 
     testImplementation("org.assertj:assertj-core:3.24.2")
     testImplementation("org.junit.jupiter:junit-jupiter-params:$junitJupiterParams")

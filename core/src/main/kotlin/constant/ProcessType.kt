@@ -1,15 +1,10 @@
 package constant
 
-import DefaultRegex
+enum class ProcessType(
+    private val description: String
+) {
+    EMAIL("이메일"),
+    NAME("이름"),
+    PASSWORD("비밀번호");
 
-enum class ProcessType {
-    EMAIL, USERNAME, PASSWORD;
-
-    fun toRegex(): Regex {
-        return when (this) {
-            EMAIL -> DefaultRegex.email
-            USERNAME -> DefaultRegex.username
-            PASSWORD -> DefaultRegex.password
-        }
-    }
 }
