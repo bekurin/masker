@@ -2,7 +2,7 @@ package converter
 
 import annotation.Ensure
 import constant.ProcessType
-import ensure.EnsureUtils
+import util.EnsureUtils
 import jakarta.persistence.AttributeConverter
 import jakarta.persistence.Converter
 
