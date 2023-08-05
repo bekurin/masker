@@ -8,7 +8,7 @@ public enum MaskerFactory {
         if (maskerType.equals(MaskerType.NAME)) {
             return new NameMasker();
         } else if (maskerType.equals(MaskerType.PHONE)) {
-            return new PasswordMasker();
+            return new PhoneMasker();
         } else if (maskerType.equals(MaskerType.EMAIL)) {
             return new EmailMasker();
         } else if (maskerType.equals(MaskerType.PASSWORD)) {
