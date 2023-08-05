@@ -5,7 +5,7 @@ public enum RegexExpression {
     PHONE("(?<=.{3}).(?=.{4})"),
     NAME_LESS_THAN_THREE("(.)$"),
     NAME_GRATER_THAN_OR_EQUAL_THREE("(?<=.).(?=.)"),
-    ALL("*");
+    ALL(".");
     private final String value;
 
     RegexExpression(String value) {
