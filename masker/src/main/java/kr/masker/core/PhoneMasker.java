@@ -7,10 +7,10 @@ import java.util.regex.Pattern;
 
 public class PhoneMasker implements Masker {
     @Override
-    public String process(CharSequence input) {
+    public String process(CharSequence input, Replacement replacement) {
         return Pattern
                 .compile(RegexExpression.PHONE.getValue())
                 .matcher(input)
-                .replaceAll(Replacement.ASTERISK.getValue());
+                .replaceAll(replacement.getValue());
     }
 }

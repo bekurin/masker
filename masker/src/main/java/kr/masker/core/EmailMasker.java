@@ -7,10 +7,10 @@ import java.util.regex.Pattern;
 
 public class EmailMasker implements Masker {
     @Override
-    public String process(CharSequence input) {
+    public String process(CharSequence input, Replacement replacement) {
         return Pattern
                 .compile(RegexExpression.EMAIL.getValue())
                 .matcher(input)
-                .replaceAll(Replacement.ASTERISK.getValue());
+                .replaceAll(replacement.getValue());
     }
 }

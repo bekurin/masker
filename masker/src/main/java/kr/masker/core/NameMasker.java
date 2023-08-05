@@ -7,10 +7,10 @@ import java.util.regex.Pattern;
 
 public class NameMasker implements Masker {
     @Override
-    public String process(CharSequence input) {
+    public String process(CharSequence input, Replacement replacement) {
         return getPattern(input)
                 .matcher(input)
-                .replaceAll(Replacement.ASTERISK.getValue());
+                .replaceAll(replacement.getValue());
     }
 
     private Pattern getPattern(CharSequence input) {
