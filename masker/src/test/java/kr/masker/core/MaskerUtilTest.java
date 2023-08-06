@@ -2,12 +2,14 @@ package kr.masker.core;
 
 import kr.masker.core.util.MaskerType;
 import kr.masker.core.util.MaskerUtil;
+import kr.masker.core.util.ReplaceStrategy;
 import kr.masker.core.util.Replacement;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.in;
 
 class MaskerUtilTest {
 
@@ -82,5 +84,24 @@ class MaskerUtilTest {
 
         // then
         assertThat(maskedPassword).isEqualTo(expect);
+    }
+
+    @ParameterizedTest
+    @CsvSource(value = {
+            "123123, *",
+            "test@gmail.com, *"
+    })
+    @DisplayName("ONE 전략을 선택하면 어떤 값이든 대체자 1개를 반환한다")
+    public void OneStrategyTest(String input, String expect) {
+        // given
+        MaskerType givenMaskerType = MaskerType.ALL;
+        Replacement givenReplacement = Replacement.ASTERISK;
+        ReplaceStrategy givenReplaceStrategy = ReplaceStrategy.ONE;
+
+        // when
+        String maskedValue = MaskerUtil.process(input, givenMaskerType, givenReplacement, givenReplaceStrategy);
+
+        // then
+        assertThat(maskedValue).isEqualTo(expect);
     }
 }
