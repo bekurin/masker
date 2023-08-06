@@ -1,13 +1,18 @@
 package kr.masker.core;
 
 import kr.masker.core.util.RegexExpression;
+import kr.masker.core.util.ReplaceStrategy;
 import kr.masker.core.util.Replacement;
 
 import java.util.regex.Pattern;
 
-public class NameMasker implements Masker {
+public class NameMasker extends Masker {
+    public NameMasker(Replacement replacement, ReplaceStrategy replaceStrategy) {
+        super(replacement, replaceStrategy);
+    }
+
     @Override
-    public String process(CharSequence input, Replacement replacement) {
+    protected String getMaskingUsingDefault(CharSequence input) {
         return getPattern(input)
                 .matcher(input)
                 .replaceAll(replacement.getValue());

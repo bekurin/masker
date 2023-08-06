@@ -17,6 +17,6 @@ public class MaskerSerializer extends JsonSerializer<Object> {
 
     @Override
     public void serialize(Object value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
-        gen.writeString(MaskerUtil.process(value.toString(), masker.maskerType(), masker.replacement()));
+        gen.writeString(MaskerUtil.process(value.toString(), masker.maskerType(), masker.replacement(), masker.strategy()));
     }
 }
