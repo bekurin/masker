@@ -1,0 +1,60 @@
+### JetBrains IDE (IntelliJ IDEA 등) ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/resources/archetype-resources/google-services.json
+
+### Eclipse IDE ###
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.classpath
+.project
+.factorypath
+
+### Visual Studio Code ###
+.vscode/
+
+### Build Tools (Gradle) ###
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+### Build Tools (Maven) ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.restoreBackup
+release.properties
+bundle.properties
+*.recipe
+
+### OS (macOS, Windows) ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+desktop.ini
+
+### Log & Temp Files ###
+*.log
+logs/
+*.temp
+
+### Spring Boot Custom ###
+# 로컬 개발 환경 설정을 위한 파일들 (DB 정보 등 민감 정보 포함 시 제외)
+HELP.md
+.mvn/wrapper/maven-wrapper.jar
+application-local.properties
+application-local.yml
+application-dev.properties
+application-dev.yml
