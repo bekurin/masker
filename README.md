@@ -73,6 +73,29 @@ public class UserResponse {
 }
 ```
 
+### 3. 대체 문자 설정 (선택)
+
+클래스 레벨에서 `@MaskerReplacement` 어노테이션을 사용하여 대체 문자를 지정할 수 있습니다.
+
+```java
+import kr.masker.core.annotation.Masker;
+import kr.masker.core.annotation.MaskerReplacement;
+import kr.masker.core.util.MaskerType;
+import kr.masker.core.util.Replacement;
+
+@MaskerReplacement(Replacement.SHARP)  // 클래스 내 모든 마스킹에 # 사용
+public class UserResponse {
+
+    @Masker(maskerType = MaskerType.NAME)
+    private String name;  // 홍길동 → 홍#동
+
+    @Masker(maskerType = MaskerType.EMAIL)
+    private String email;  // test@gmail.com → tes#@g########
+
+    // 생성자, getter 생략
+}
+```
+
 ## 마스킹 타입
 
 | 타입 | 설명 | 입력 예시 | 출력 예시 |
@@ -92,9 +115,14 @@ public class UserResponse {
 
 ### 대체 문자 (Replacement)
 
+클래스 레벨에서 `@MaskerReplacement` 어노테이션을 사용하여 설정합니다.
+
 ```java
-@Masker(maskerType = MaskerType.NAME, replacement = Replacement.ASTERISK)  // 기본값: *
-@Masker(maskerType = MaskerType.NAME, replacement = Replacement.SHARP)     // #
+@MaskerReplacement(Replacement.ASTERISK)  // 기본값: *
+public class UserResponse { ... }
+
+@MaskerReplacement(Replacement.SHARP)     // #
+public class AnotherResponse { ... }
 ```
 
 | 옵션 | 대체 문자 |
@@ -103,6 +131,8 @@ public class UserResponse {
 | `SHARP` | `#` |
 
 ### 대체 전략 (ReplaceStrategy)
+
+필드 레벨에서 `@Masker` 어노테이션의 `strategy` 속성으로 설정합니다.
 
 ```java
 @Masker(maskerType = MaskerType.ALL, strategy = ReplaceStrategy.DEFAULT)  // 자릿수 유지
@@ -118,23 +148,41 @@ public class UserResponse {
 
 ```java
 import kr.masker.core.annotation.Masker;
+import kr.masker.core.annotation.MaskerReplacement;
 import kr.masker.core.util.MaskerType;
 import kr.masker.core.util.Replacement;
 import kr.masker.core.util.ReplaceStrategy;
 
+@MaskerReplacement(Replacement.ASTERISK)  // 클래스 내 모든 마스킹에 * 사용 (기본값)
 public class UserResponse {
 
     @Masker(maskerType = MaskerType.NAME)
     private String name;  // 홍길동 → 홍*동
 
-    @Masker(maskerType = MaskerType.EMAIL, replacement = Replacement.SHARP)
-    private String email;  // test@gmail.com → tes#@g########
+    @Masker(maskerType = MaskerType.EMAIL)
+    private String email;  // test@gmail.com → tes*@g********
 
     @Masker(maskerType = MaskerType.PHONE)
     private String phone;  // 01011112222 → 010****2222
 
     @Masker(maskerType = MaskerType.PASSWORD, strategy = ReplaceStrategy.ONE)
     private String password;  // password123 → *
+
+    // 생성자, getter 생략
+}
+```
+
+### # 대체 문자로 사용하기
+
+```java
+@MaskerReplacement(Replacement.SHARP)  // 클래스 내 모든 마스킹에 # 사용
+public class AdminResponse {
+
+    @Masker(maskerType = MaskerType.NAME)
+    private String name;  // 홍길동 → 홍#동
+
+    @Masker(maskerType = MaskerType.EMAIL)
+    private String email;  // test@gmail.com → tes#@g########
 
     // 생성자, getter 생략
 }
