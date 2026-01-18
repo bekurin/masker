@@ -24,6 +24,6 @@ public class NameMasker extends Masker {
                     .compile(RegexExpression.NAME_LESS_THAN_THREE.getValue());
         }
         return Pattern
-                .compile(RegexExpression.NAME_GRATER_THAN_OR_EQUAL_THREE.getValue());
+                .compile(RegexExpression.NAME_GREATER_THAN_OR_EQUAL_THREE.getValue());
     }
 }
