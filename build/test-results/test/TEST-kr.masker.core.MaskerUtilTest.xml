@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="kr.masker.core.MaskerUtilTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-08-06T02:22:17" hostname="righteouss-MacBook-Air.local" time="0.034">
+  <properties/>
+  <testcase name="[1] input=123123, expect=*" classname="kr.masker.core.MaskerUtilTest" time="0.031"/>
+  <testcase name="[2] input=test@gmail.com, expect=*" classname="kr.masker.core.MaskerUtilTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
