@@ -52,7 +52,7 @@ masker.active=true
 마스킹이 필요한 필드에 `@Masker` 어노테이션을 추가합니다.
 
 ```java
-import kr.masker.core.annotation.Masker;
+import kr.masker.core.integration.annotation.Masker;
 import kr.masker.core.util.MaskerType;
 
 public class UserResponse {
@@ -78,8 +78,8 @@ public class UserResponse {
 클래스 레벨에서 `@MaskerReplacement` 어노테이션을 사용하여 대체 문자를 지정할 수 있습니다.
 
 ```java
-import kr.masker.core.annotation.Masker;
-import kr.masker.core.annotation.MaskerReplacement;
+import kr.masker.core.integration.annotation.Masker;
+import kr.masker.core.integration.annotation.MaskerReplacement;
 import kr.masker.core.util.MaskerType;
 import kr.masker.core.util.Replacement;
 
@@ -147,8 +147,8 @@ public class AnotherResponse { ... }
 ## 전체 예시
 
 ```java
-import kr.masker.core.annotation.Masker;
-import kr.masker.core.annotation.MaskerReplacement;
+import kr.masker.core.integration.annotation.Masker;
+import kr.masker.core.integration.annotation.MaskerReplacement;
 import kr.masker.core.util.MaskerType;
 import kr.masker.core.util.Replacement;
 import kr.masker.core.util.ReplaceStrategy;

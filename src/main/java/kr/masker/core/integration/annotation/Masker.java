@@ -1,4 +1,4 @@
-package kr.masker.core.annotation;
+package kr.masker.core.integration.annotation;
 
 import kr.masker.core.util.MaskerType;
 import kr.masker.core.util.ReplaceStrategy;

@@ -1,10 +1,10 @@
-package kr.masker.core.jackson;
+package kr.masker.core.integration.jackson;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
-import kr.masker.core.annotation.Masker;
-import kr.masker.core.util.MaskerUtil;
+import kr.masker.core.integration.annotation.Masker;
+import kr.masker.core.application.MaskerUtil;
 import kr.masker.core.util.Replacement;
 
 import java.io.IOException;

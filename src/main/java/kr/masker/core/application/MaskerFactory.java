@@ -1,12 +1,13 @@
-package kr.masker.core.util;
+package kr.masker.core.application;
 
-import kr.masker.core.*;
+import kr.masker.core.domain.*;
+import kr.masker.core.util.MaskerType;
+import kr.masker.core.util.ReplaceStrategy;
+import kr.masker.core.util.Replacement;
 
 import java.util.Map;
 
-public enum MaskerFactory {
-    ;
-
+public class MaskerFactory {
     @FunctionalInterface
     interface MaskerCreator {
         Masker create(Replacement replacement, ReplaceStrategy strategy);

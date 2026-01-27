@@ -1,1 +1,1 @@
-kr.masker.core.config.MaskerAutoConfiguration
+kr.masker.core.integration.spring.MaskerAutoConfiguration

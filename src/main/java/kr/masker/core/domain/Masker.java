@@ -1,4 +1,4 @@
-package kr.masker.core;
+package kr.masker.core.domain;
 
 import kr.masker.core.util.RegexExpression;
 import kr.masker.core.util.ReplaceStrategy;

@@ -1,7 +1,7 @@
-package kr.masker.core.config;
+package kr.masker.core.integration.spring;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import kr.masker.core.jackson.MaskerAnnotationIntrospector;
+import kr.masker.core.integration.jackson.MaskerAnnotationIntrospector;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;

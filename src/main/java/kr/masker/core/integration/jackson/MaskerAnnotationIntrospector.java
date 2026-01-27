@@ -1,10 +1,10 @@
-package kr.masker.core.jackson;
+package kr.masker.core.integration.jackson;
 
 import com.fasterxml.jackson.databind.introspect.Annotated;
 import com.fasterxml.jackson.databind.introspect.AnnotatedMember;
 import com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector;
-import kr.masker.core.annotation.Masker;
-import kr.masker.core.annotation.MaskerReplacement;
+import kr.masker.core.integration.annotation.Masker;
+import kr.masker.core.integration.annotation.MaskerReplacement;
 import kr.masker.core.util.Replacement;
 
 public class MaskerAnnotationIntrospector extends JacksonAnnotationIntrospector {

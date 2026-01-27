@@ -1,7 +1,7 @@
 package kr.masker.core;
 
 import kr.masker.core.util.MaskerType;
-import kr.masker.core.util.MaskerUtil;
+import kr.masker.core.application.MaskerUtil;
 import kr.masker.core.util.ReplaceStrategy;
 import kr.masker.core.util.Replacement;
 import org.junit.jupiter.api.DisplayName;
