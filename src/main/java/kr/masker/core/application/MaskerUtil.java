@@ -6,6 +6,12 @@ import kr.masker.core.util.Replacement;
 
 public class MaskerUtil {
 
+    public static String process(String value, MaskerType maskerType) {
+        return MaskerFactory
+                .of(maskerType, Replacement.ASTERISK, ReplaceStrategy.DEFAULT)
+                .process(value);
+    }
+
     public static String process(String value, MaskerType maskerType, Replacement replacement, ReplaceStrategy replaceStrategy) {
         return MaskerFactory
                 .of(maskerType, replacement, replaceStrategy)

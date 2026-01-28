@@ -7,12 +7,13 @@ import kr.masker.core.util.Replacement;
 import java.util.regex.Pattern;
 
 public class NameMasker extends Masker {
+
     public NameMasker(Replacement replacement, ReplaceStrategy replaceStrategy) {
         super(replacement, replaceStrategy);
     }
 
     @Override
-    protected String getMaskingUsingDefault(CharSequence input) {
+    protected String mask(CharSequence input) {
         return getPattern(input)
                 .matcher(input)
                 .replaceAll(replacement.getValue());

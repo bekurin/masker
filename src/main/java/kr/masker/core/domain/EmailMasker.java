@@ -7,12 +7,13 @@ import kr.masker.core.util.Replacement;
 import java.util.regex.Pattern;
 
 public class EmailMasker extends Masker {
+
     public EmailMasker(Replacement replacement, ReplaceStrategy replaceStrategy) {
         super(replacement, replaceStrategy);
     }
 
     @Override
-    protected String getMaskingUsingDefault(CharSequence input) {
+    protected String mask(CharSequence input) {
         return Pattern
                 .compile(RegexExpression.EMAIL.getValue())
                 .matcher(input)

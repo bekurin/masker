@@ -13,7 +13,7 @@ public class AllMasker extends Masker {
     }
 
     @Override
-    protected String getMaskingUsingDefault(CharSequence input) {
+    protected String mask(CharSequence input) {
         return Pattern
                 .compile(RegexExpression.ALL.getValue())
                 .matcher(input)

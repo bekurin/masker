@@ -13,7 +13,7 @@ public class PhoneMasker extends Masker {
     }
 
     @Override
-    protected String getMaskingUsingDefault(CharSequence input) {
+    protected String mask(CharSequence input) {
         return Pattern
                 .compile(RegexExpression.PHONE.getValue())
                 .matcher(input)

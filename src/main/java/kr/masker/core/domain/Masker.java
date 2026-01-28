@@ -1,12 +1,10 @@
 package kr.masker.core.domain;
 
-import kr.masker.core.util.RegexExpression;
 import kr.masker.core.util.ReplaceStrategy;
 import kr.masker.core.util.Replacement;
 
-import java.util.regex.Pattern;
-
 public abstract class Masker {
+
     protected final Replacement replacement;
     protected final ReplaceStrategy replaceStrategy;
 
@@ -17,21 +15,16 @@ public abstract class Masker {
 
     public String process(CharSequence input) {
         if (replaceStrategy.equals(ReplaceStrategy.DEFAULT)) {
-            return getMaskingUsingDefault(input);
+            return mask(input);
         } else if (replaceStrategy.equals(ReplaceStrategy.ONE)) {
-            return getMaskingUsingOne();
+            return mask();
         }
         throw new RuntimeException("undefined replace strategy " + replaceStrategy.name());
     }
 
-    protected String getMaskingUsingDefault(CharSequence input) {
-        return Pattern
-                .compile(RegexExpression.ALL.getValue())
-                .matcher(input)
-                .replaceAll(replacement.getValue());
-    }
-
-    protected String getMaskingUsingOne() {
+    protected String mask() {
         return replacement.getValue();
     }
+
+    protected abstract String mask(CharSequence input);
 }
